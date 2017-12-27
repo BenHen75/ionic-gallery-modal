@@ -73,28 +73,28 @@ var FittedImage = (function () {
             originalHeight: this.originalDimensions.height
         });
     };
-    __decorate([
-        core_1.Input()
-    ], FittedImage.prototype, "photo");
-    __decorate([
-        core_1.Input()
-    ], FittedImage.prototype, "resizeTriggerer");
-    __decorate([
-        core_1.Input()
-    ], FittedImage.prototype, "wrapperWidth");
-    __decorate([
-        core_1.Input()
-    ], FittedImage.prototype, "wrapperHeight");
-    __decorate([
-        core_1.Output()
-    ], FittedImage.prototype, "onImageResized");
-    FittedImage = __decorate([
-        core_1.Component({
-            selector: 'fitted-image',
-            templateUrl: './fitted-image.html',
-            styleUrls: ['./fitted-image.scss']
-        })
-    ], FittedImage);
     return FittedImage;
 }());
+__decorate([
+    core_1.Input()
+], FittedImage.prototype, "photo");
+__decorate([
+    core_1.Input()
+], FittedImage.prototype, "resizeTriggerer");
+__decorate([
+    core_1.Input()
+], FittedImage.prototype, "wrapperWidth");
+__decorate([
+    core_1.Input()
+], FittedImage.prototype, "wrapperHeight");
+__decorate([
+    core_1.Output()
+], FittedImage.prototype, "onImageResized");
+FittedImage = __decorate([
+    core_1.Component({
+        selector: 'fitted-image',
+        templateUrl: './fitted-image.html',
+        styleUrls: ['./fitted-image.scss']
+    })
+], FittedImage);
 exports.FittedImage = FittedImage;
