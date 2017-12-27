@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef, Renderer } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { ViewController, NavParams, Slides, Platform } from 'ionic-angular';
 import { Photo } from '../interfaces/photo-interface';
@@ -13,6 +13,8 @@ export class GalleryModal implements OnInit {
   @ViewChild('slider') slider: Slides;
 
   private initialImage: any;
+
+  currentIndex = 0;
 
   public photos: Photo[];
   private sliderDisabled: boolean = false;
@@ -39,7 +41,7 @@ export class GalleryModal implements OnInit {
   private transitionDuration: string = '200ms';
   private transitionTimingFunction: string = 'cubic-bezier(0.33, 0.66, 0.66, 1)';
 
-  constructor(private viewCtrl: ViewController, params: NavParams, private element: ElementRef, private platform: Platform, private domSanitizer: DomSanitizer) {
+  constructor(public renderer: Renderer, private viewCtrl: ViewController, params: NavParams, private element: ElementRef, private platform: Platform, private domSanitizer: DomSanitizer) {
     this.photos = params.get('photos') || [];
     this.closeIcon = params.get('closeIcon') || 'arrow-back';
     this.initialSlide = params.get('initialSlide') || 0;
@@ -50,6 +52,19 @@ export class GalleryModal implements OnInit {
   public ngOnInit() {
     // call resize on init
     this.resize({});
+  }
+
+  slideChanged() {
+    this.currentIndex = this.slider.getActiveIndex();
+  }
+
+  
+  nextSlide() {
+    this.slider.slideNext();
+  }
+
+  previousSlide() {
+    this.slider.slidePrev();
   }
 
   /**
@@ -70,6 +85,47 @@ export class GalleryModal implements OnInit {
       width: this.width,
       height: this.height,
     });
+
+    if(window.innerWidth > 576) {
+                
+      //benhen
+
+      //var ratio = 1; 
+      var width = this.initialImage.width;
+      var height = this.initialImage.height;
+
+      //if(this.initialImage.height || this.initialImage.width) ratio = 1;
+      //else 
+      //var ratio = height / width;
+      //var final_width = 0;
+      //var final_height = 0;
+
+      //if(this.height > this.initialImage.height) 
+
+      if (width / height > this.width / this.height) {
+          this.width = this.width;
+          this.height = height / width * this.width;
+      } else {
+          this.height = this.height;
+          this.width = width / height * this.height;
+      }
+
+      //var popup_width = final_width;
+      //this.width = popup_width;
+
+      //var popup_width = 200;
+
+      this.renderer.setElementClass(this.viewCtrl.pageRef().nativeElement, 'all-popup', true);
+
+      var popup_left = "calc(50% - " + this.width / 2 + "px)";
+      var popup_top = "calc(50% - " + this.height / 2 + "px)";
+
+      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'width', this.width + 'px');
+      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'left', popup_left);
+
+      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'height', this.height + 'px');
+      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'top', popup_top);
+    }
   }
 
   private orientationChange(event) {

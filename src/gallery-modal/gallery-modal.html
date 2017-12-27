@@ -26,6 +26,7 @@
     [ngStyle]="slidesStyle"
     touch-events
     (ionSlideDrag)="slidesDrag($event)"
+    (ionSlideWillChange)="slideChanged()" 
     (panup)="panUpDownEvent($event)"
     (pandown)="panUpDownEvent($event)"
     (panend)="panEndEvent($event)"
@@ -41,6 +42,15 @@
         (disableScroll)="disableScroll($event)"
         (enableScroll)="enableScroll($event)"
       ></zoomable-image>
+      
+      <div *ngIf="currentIndex > 0"
+        class="swiper-button-prev swiper-button-white"
+        (click)="previousSlide()"></div>
+   
+      <div *ngIf="currentIndex < photos.length"
+          class="swiper-button-next swiper-button-white"
+          (click)="nextSlide()"></div>
+
     </ion-slide>
   </ion-slides>
 </ion-content>
