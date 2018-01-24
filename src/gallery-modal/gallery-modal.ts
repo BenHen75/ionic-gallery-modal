@@ -14,7 +14,7 @@ export class GalleryModal implements OnInit {
 
   private initialImage: any;
 
-  currentIndex = 0;
+  public currentIndex = 0;
 
   public photos: Photo[];
   private sliderDisabled: boolean = false;
@@ -47,6 +47,9 @@ export class GalleryModal implements OnInit {
     this.initialSlide = params.get('initialSlide') || 0;
 
     this.initialImage = this.photos[this.initialSlide] || {};
+
+    this.renderer.setElementClass(viewCtrl.pageRef().nativeElement, 'all-popup', true);
+
   }
 
   public ngOnInit() {
@@ -115,16 +118,14 @@ export class GalleryModal implements OnInit {
 
       //var popup_width = 200;
 
-      this.renderer.setElementClass(this.viewCtrl.pageRef().nativeElement, 'all-popup', true);
-
       var popup_left = "calc(50% - " + this.width / 2 + "px)";
       var popup_top = "calc(50% - " + this.height / 2 + "px)";
 
       this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'width', this.width + 'px');
       this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'left', popup_left);
 
-      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'height', this.height + 'px');
-      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'top', popup_top);
+      //this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'height', this.height + 'px');
+      //this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'top', popup_top);
     }
   }
 
