@@ -123,8 +123,8 @@ export class GalleryModal implements OnInit {
       this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'width', this.width + 'px');
       this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'left', popup_left);
 
-      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'height', this.height + 'px');
-      this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'top', popup_top);
+      //this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'height', this.height + 'px');
+      //this.renderer.setElementStyle(this.viewCtrl.pageRef().nativeElement.querySelector('.modal-wrapper'), 'top', popup_top);
     }
   }
 
