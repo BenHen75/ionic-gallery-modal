@@ -83,10 +83,10 @@ var GalleryModal = (function () {
             //if(this.height > this.initialImage.height) 
             if (width / height > this.width / this.height) {
                 this.width = this.width;
-                this.height = height / width * this.width;
+                //this.height = height / width * this.width;
             }
             else {
-                this.height = this.height;
+                //this.height = this.height;
                 this.width = width / height * this.height;
             }
             //var popup_width = final_width;
