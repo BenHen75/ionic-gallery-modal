@@ -255,37 +255,37 @@ var ZoomableImage = (function () {
             this.checkScroll();
         }
     };
+    __decorate([
+        core_1.ViewChild('ionScrollContainer', { read: core_1.ElementRef })
+    ], ZoomableImage.prototype, "ionScrollContainer");
+    __decorate([
+        core_1.Input()
+    ], ZoomableImage.prototype, "photo");
+    __decorate([
+        core_1.Input()
+    ], ZoomableImage.prototype, "resizeTriggerer");
+    __decorate([
+        core_1.Input()
+    ], ZoomableImage.prototype, "wrapperWidth");
+    __decorate([
+        core_1.Input()
+    ], ZoomableImage.prototype, "wrapperHeight");
+    __decorate([
+        core_1.Output()
+    ], ZoomableImage.prototype, "disableScroll");
+    __decorate([
+        core_1.Output()
+    ], ZoomableImage.prototype, "enableScroll");
+    __decorate([
+        core_1.Output()
+    ], ZoomableImage.prototype, "zoomChange");
+    ZoomableImage = __decorate([
+        core_1.Component({
+            selector: 'zoomable-image',
+            templateUrl: './zoomable-image.html',
+            styleUrls: ['./zoomable-image.scss']
+        })
+    ], ZoomableImage);
     return ZoomableImage;
 }());
-__decorate([
-    core_1.ViewChild('ionScrollContainer', { read: core_1.ElementRef })
-], ZoomableImage.prototype, "ionScrollContainer");
-__decorate([
-    core_1.Input()
-], ZoomableImage.prototype, "photo");
-__decorate([
-    core_1.Input()
-], ZoomableImage.prototype, "resizeTriggerer");
-__decorate([
-    core_1.Input()
-], ZoomableImage.prototype, "wrapperWidth");
-__decorate([
-    core_1.Input()
-], ZoomableImage.prototype, "wrapperHeight");
-__decorate([
-    core_1.Output()
-], ZoomableImage.prototype, "disableScroll");
-__decorate([
-    core_1.Output()
-], ZoomableImage.prototype, "enableScroll");
-__decorate([
-    core_1.Output()
-], ZoomableImage.prototype, "zoomChange");
-ZoomableImage = __decorate([
-    core_1.Component({
-        selector: 'zoomable-image',
-        templateUrl: './zoomable-image.html',
-        styleUrls: ['./zoomable-image.scss']
-    })
-], ZoomableImage);
 exports.ZoomableImage = ZoomableImage;
