@@ -107,9 +107,9 @@ export class GalleryModal implements OnInit {
 
       if (width / height > this.width / this.height) {
           this.width = this.width;
-          this.height = height / width * this.width;
+          //this.height = height / width * this.width;
       } else {
-          this.height = this.height;
+          //this.height = this.height;
           this.width = width / height * this.height;
       }
 
