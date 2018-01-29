@@ -115,7 +115,7 @@ export class GalleryModal implements OnInit {
 
       //var popup_width = 200;
 
-      this.renderer.setElementClass(this.viewCtrl.pageRef().nativeElement, 'all-popup', true);
+      //this.renderer.setElementClass(this.viewCtrl.pageRef().nativeElement, 'all-popup', true);
 
       var popup_left = "calc(50% - " + this.width / 2 + "px)";
       var popup_top = "calc(50% - " + this.height / 2 + "px)";
