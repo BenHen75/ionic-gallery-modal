@@ -71,50 +71,50 @@ var TouchEventsDirective = (function () {
     TouchEventsDirective.prototype.ngOnDestroy = function () {
         this.gestureListener.destroy();
     };
+    __decorate([
+        core_1.Input()
+    ], TouchEventsDirective.prototype, "direction");
+    __decorate([
+        core_1.Input()
+    ], TouchEventsDirective.prototype, "threshold");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "pinch");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "pinchstart");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "pinchend");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "onpan");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "panup");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "pandown");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "panleft");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "panright");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "panend");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "pancancel");
+    __decorate([
+        core_1.Output()
+    ], TouchEventsDirective.prototype, "doubletap");
+    TouchEventsDirective = __decorate([
+        core_1.Directive({
+            selector: '[touch-events]'
+        })
+    ], TouchEventsDirective);
     return TouchEventsDirective;
 }());
-__decorate([
-    core_1.Input()
-], TouchEventsDirective.prototype, "direction");
-__decorate([
-    core_1.Input()
-], TouchEventsDirective.prototype, "threshold");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "pinch");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "pinchstart");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "pinchend");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "onpan");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "panup");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "pandown");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "panleft");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "panright");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "panend");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "pancancel");
-__decorate([
-    core_1.Output()
-], TouchEventsDirective.prototype, "doubletap");
-TouchEventsDirective = __decorate([
-    core_1.Directive({
-        selector: '[touch-events]'
-    })
-], TouchEventsDirective);
 exports.TouchEventsDirective = TouchEventsDirective;

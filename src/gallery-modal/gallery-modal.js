@@ -204,16 +204,16 @@ var GalleryModal = (function () {
             this.modalStyle.backgroundColor = 'rgba(0, 0, 0, 1)';
         }
     };
+    __decorate([
+        core_1.ViewChild('slider')
+    ], GalleryModal.prototype, "slider");
+    GalleryModal = __decorate([
+        core_1.Component({
+            selector: 'gallery-modal',
+            templateUrl: './gallery-modal.html',
+            styleUrls: ['./gallery-modal.scss']
+        })
+    ], GalleryModal);
     return GalleryModal;
 }());
-__decorate([
-    core_1.ViewChild('slider')
-], GalleryModal.prototype, "slider");
-GalleryModal = __decorate([
-    core_1.Component({
-        selector: 'gallery-modal',
-        templateUrl: './gallery-modal.html',
-        styleUrls: ['./gallery-modal.scss']
-    })
-], GalleryModal);
 exports.GalleryModal = GalleryModal;
